@@ -6,149 +6,198 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>391</width>
-    <height>490</height>
+    <width>596</width>
+    <height>542</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>11</x>
       <y>11</y>
-      <width>171</width>
-      <height>417</height>
+      <width>581</width>
+      <height>471</height>
      </rect>
     </property>
-    <property name="title">
-     <string>Particula.</string>
+    <property name="currentIndex">
+     <number>1</number>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="1">
-      <widget class="QSpinBox" name="origen_x_spinBox"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QSpinBox" name="id_spinBox"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>destino y:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>origen x:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>velocidad:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>destino x:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QSpinBox" name="blue_spinBox"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>origen y:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>blue:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" colspan="2">
-      <widget class="QPushButton" name="agregar_inicio_pushButton">
-       <property name="text">
-        <string>Agregar inicio</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QSpinBox" name="origen_y_spinBox"/>
-     </item>
-     <item row="12" column="0" colspan="2">
-      <widget class="QPushButton" name="mostrar_pushButton">
-       <property name="text">
-        <string>Mostrtar</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QSpinBox" name="velocidad_spinBox"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QSpinBox" name="destino_y_spinBox"/>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>green:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>id:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QSpinBox" name="green_spinBox"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QSpinBox" name="destino_x_spinBox"/>
-     </item>
-     <item row="6" column="1">
-      <widget class="QSpinBox" name="red_spinBox"/>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>red:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="0" colspan="2">
-      <widget class="QPushButton" name="agregar_final_pushButton">
-       <property name="text">
-        <string>Agregar final</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPlainTextEdit" name="salida">
-    <property name="geometry">
-     <rect>
-      <x>186</x>
-      <y>11</y>
-      <width>191</width>
-      <height>417</height>
-     </rect>
-    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Agregar</string>
+     </attribute>
+     <widget class="QPlainTextEdit" name="salida">
+      <property name="geometry">
+       <rect>
+        <x>257</x>
+        <y>11</y>
+        <width>301</width>
+        <height>421</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>11</y>
+        <width>241</width>
+        <height>417</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Particula.</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="origen_x_spinBox"/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="id_spinBox"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>destino y:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>origen x:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>velocidad:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>destino x:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QSpinBox" name="blue_spinBox"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>origen y:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>blue:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="2">
+        <widget class="QPushButton" name="agregar_inicio_pushButton">
+         <property name="text">
+          <string>Agregar inicio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSpinBox" name="origen_y_spinBox"/>
+       </item>
+       <item row="12" column="0" colspan="2">
+        <widget class="QPushButton" name="mostrar_pushButton">
+         <property name="text">
+          <string>Mostrtar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QSpinBox" name="velocidad_spinBox"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QSpinBox" name="destino_y_spinBox"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>green:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>id:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QSpinBox" name="green_spinBox"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QSpinBox" name="destino_x_spinBox"/>
+       </item>
+       <item row="6" column="1">
+        <widget class="QSpinBox" name="red_spinBox"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>red:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <widget class="QPushButton" name="agregar_final_pushButton">
+         <property name="text">
+          <string>Agregar final</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tabla</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <widget class="QLineEdit" name="buscar_lineEdit">
+        <property name="placeholderText">
+         <string>ID de particula</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="buscar_pushButton">
+        <property name="text">
+         <string>Buscar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QTableWidget" name="tabla"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="mostrar_tabla_pushButton">
+        <property name="text">
+         <string>Mostrar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -156,7 +205,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>391</width>
+     <width>596</width>
      <height>26</height>
     </rect>
    </property>
