@@ -2,9 +2,9 @@
      {
           "id": 1,
           "origen_x": 1,
-          "origen_y": 1,
+          "origen_y": 2,
           "destino_x": 1,
-          "destino_y": 1,
+          "destino_y": 3,
           "velocidad": 1,
           "red": 1,
           "green": 1,
@@ -13,12 +13,23 @@
      {
           "id": 2,
           "origen_x": 2,
-          "origen_y": 2,
+          "origen_y": 4,
           "destino_x": 2,
-          "destino_y": 2,
+          "destino_y": 6,
           "velocidad": 2,
           "red": 2,
           "green": 2,
           "blue": 2
+     },
+     {
+          "id": 3,
+          "origen_x": 3,
+          "origen_y": 7,
+          "destino_x": 3,
+          "destino_y": 9,
+          "velocidad": 3,
+          "red": 3,
+          "green": 3,
+          "blue": 3
      }
 ]
