@@ -3,8 +3,10 @@ Carlos Paredes Márquez.
 Importar window a code. xd
 28/10/2020.
 """
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem, QGraphicsScene
 from PySide2.QtCore import Slot
+from PySide2.QtGui import QPen, QColor, QTransform
+from random import randint
 from ui_mainwindow import Ui_MainWindow
 from libreria import Libreria
 from particula import Particula
@@ -26,6 +28,25 @@ class MainWindow(QMainWindow):
 
         self.ui.mostrar_tabla_pushButton.clicked.connect(self.mostrar_tabla)
         self.ui.buscar_pushButton.clicked.connect(self.buscar_particula)
+
+        self.ui.dibujar.clicked.connect(self.dibujar)
+        self.ui.limpiar.clicked.connect(self.limpiar)
+
+        self.scene = QGraphicsScene()
+        self.ui.graphicsView.setScene(self.scene)
+
+    @Slot()
+    def dibujar(self):
+        pen = QPen()
+        pen.setWidth(2)
+
+        self.scene.addEllipse(0, 0, 3, 3, pen)
+        self.scene.addEllipse(500, 500, 3, 3, pen)
+        self.scene.addLine(0, 0, 500, 500, pen)
+    
+    @Slot()
+    def limpiar(self):
+        print('limpiar')
 
     @Slot()
     def buscar_particula(self):
