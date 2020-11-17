@@ -35,18 +35,48 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
+    def wheelEvent(self, event):
+        if event.delta() > 0:
+            self.ui.graphicsView.scale(1.2, 1.2)
+        else:
+            self.ui.graphicsView.scale(0.8, 0.8)
+
     @Slot()
     def dibujar(self):
         pen = QPen()
         pen.setWidth(2)
 
-        self.scene.addEllipse(0, 0, 3, 3, pen)
-        self.scene.addEllipse(500, 500, 3, 3, pen)
-        self.scene.addLine(0, 0, 500, 500, pen)
+        for particula in self.libreria: #'MainWindow' object has no attribute 'particulas'
+            r = particula.red
+            g = particula.green
+            b = particula.blue
+            color = QColor(r, g, b)
+            pen.setColor(color)
+
+            self.scene.addEllipse(particula.origen_x, particula.origen_y, 4, 4, pen)
+            self.scene.addEllipse(particula.destino_x, particula.destino_y, 4, 4, pen)
+            self.scene.addLine(particula.origen_x, particula.origen_y, particula.destino_x, particula.destino_y, pen)
+        
+        """for i in range(100):
+            r = randint(0, 255)
+            g = randint(0, 255)
+            b = randint(0, 255)
+
+            color = QColor(r, g, b)
+            pen.setColor(color)
+
+            gen_x = randint(0, 500)
+            gen_y = randint(0, 500)
+            no_x = randint(0, 500)
+            no_y = randint(0, 500)
+
+            self.scene.addEllipse(gen_x, gen_y, 3, 3, pen)
+            self.scene.addEllipse(no_x, no_y, 3, 3, pen)
+            self.scene.addLine(gen_x + 3, gen_y + 3, no_x, no_y, pen)"""
     
     @Slot()
     def limpiar(self):
-        print('limpiar')
+        self.scene.clear()
 
     @Slot()
     def buscar_particula(self):
