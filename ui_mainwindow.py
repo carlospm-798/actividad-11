@@ -26,8 +26,8 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.tabWidget = QTabWidget(self.centralwidget)
-        self.tabWidget.setObjectName(u"tabWidget")
+        self.tabWidge = QTabWidget(self.centralwidget)
+        self.tabWidge.setObjectName(u"tabWidge")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.salida = QPlainTextEdit(self.tab)
@@ -40,11 +40,13 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.origen_x_spinBox = QSpinBox(self.groupBox)
         self.origen_x_spinBox.setObjectName(u"origen_x_spinBox")
+        self.origen_x_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.origen_x_spinBox, 1, 1, 1, 1)
 
         self.id_spinBox = QSpinBox(self.groupBox)
         self.id_spinBox.setObjectName(u"id_spinBox")
+        self.id_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.id_spinBox, 0, 1, 1, 1)
 
@@ -90,6 +92,7 @@ class Ui_MainWindow(object):
 
         self.origen_y_spinBox = QSpinBox(self.groupBox)
         self.origen_y_spinBox.setObjectName(u"origen_y_spinBox")
+        self.origen_y_spinBox.setMaximum(999)
 
         self.gridLayout.addWidget(self.origen_y_spinBox, 2, 1, 1, 1)
 
@@ -100,11 +103,13 @@ class Ui_MainWindow(object):
 
         self.velocidad_spinBox = QSpinBox(self.groupBox)
         self.velocidad_spinBox.setObjectName(u"velocidad_spinBox")
+        self.velocidad_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.velocidad_spinBox, 5, 1, 1, 1)
 
         self.destino_y_spinBox = QSpinBox(self.groupBox)
         self.destino_y_spinBox.setObjectName(u"destino_y_spinBox")
+        self.destino_y_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.destino_y_spinBox, 4, 1, 1, 1)
 
@@ -120,16 +125,19 @@ class Ui_MainWindow(object):
 
         self.green_spinBox = QSpinBox(self.groupBox)
         self.green_spinBox.setObjectName(u"green_spinBox")
+        self.green_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.green_spinBox, 7, 1, 1, 1)
 
         self.destino_x_spinBox = QSpinBox(self.groupBox)
         self.destino_x_spinBox.setObjectName(u"destino_x_spinBox")
+        self.destino_x_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.destino_x_spinBox, 3, 1, 1, 1)
 
         self.red_spinBox = QSpinBox(self.groupBox)
         self.red_spinBox.setObjectName(u"red_spinBox")
+        self.red_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.red_spinBox, 6, 1, 1, 1)
 
@@ -143,7 +151,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.agregar_final_pushButton, 11, 0, 1, 2)
 
-        self.tabWidget.addTab(self.tab, "")
+        self.tabWidge.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
         self.gridLayout_2 = QGridLayout(self.tab_2)
@@ -168,7 +176,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.tabla, 0, 0, 1, 3)
 
-        self.tabWidget.addTab(self.tab_2, "")
+        self.tabWidge.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
         self.gridLayout_4 = QGridLayout(self.tab_3)
@@ -188,9 +196,34 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.limpiar, 1, 1, 1, 1)
 
-        self.tabWidget.addTab(self.tab_3, "")
+        self.tabWidge.addTab(self.tab_3, "")
+        self.tab_4 = QWidget()
+        self.tab_4.setObjectName(u"tab_4")
+        self.gridLayout_5 = QGridLayout(self.tab_4)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.id_ascendente_pushButton = QPushButton(self.tab_4)
+        self.id_ascendente_pushButton.setObjectName(u"id_ascendente_pushButton")
 
-        self.gridLayout_3.addWidget(self.tabWidget, 0, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.id_ascendente_pushButton, 1, 0, 1, 1)
+
+        self.distancia_descendente_pushButton = QPushButton(self.tab_4)
+        self.distancia_descendente_pushButton.setObjectName(u"distancia_descendente_pushButton")
+
+        self.gridLayout_5.addWidget(self.distancia_descendente_pushButton, 1, 1, 1, 1)
+
+        self.velocidad_ascendente_pushButton = QPushButton(self.tab_4)
+        self.velocidad_ascendente_pushButton.setObjectName(u"velocidad_ascendente_pushButton")
+
+        self.gridLayout_5.addWidget(self.velocidad_ascendente_pushButton, 1, 2, 1, 1)
+
+        self.tabla2 = QTableWidget(self.tab_4)
+        self.tabla2.setObjectName(u"tabla2")
+
+        self.gridLayout_5.addWidget(self.tabla2, 0, 0, 1, 3)
+
+        self.tabWidge.addTab(self.tab_4, "")
+
+        self.gridLayout_3.addWidget(self.tabWidge, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -209,7 +242,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidge.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -238,14 +271,18 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"id:", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"red:", None))
         self.agregar_final_pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar final", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Agregar", None))
+        self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.buscar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.buscar_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"ID de particula", None))
         self.mostrar_tabla_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tabla", None))
+        self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tabla", None))
         self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"P\u00e1gina", None))
+        self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Pizarra", None))
+        self.id_ascendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"id (ascendente)", None))
+        self.distancia_descendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"Distancia (descendente)", None))
+        self.velocidad_ascendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"Velocidad (ascendente)", None))
+        self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Orden", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
 
