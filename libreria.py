@@ -27,7 +27,7 @@ class Libreria:
     
     def __len__(self):
         return len(self.__particulas)
-    
+
     def __iter__(self):
         self.cont = 0
         return self
