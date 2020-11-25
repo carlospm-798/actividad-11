@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidge">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -90,7 +90,11 @@
           </widget>
          </item>
          <item row="8" column="1">
-          <widget class="QSpinBox" name="blue_spinBox"/>
+          <widget class="QSpinBox" name="blue_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_3">
@@ -248,37 +252,6 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Orden</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_5">
-        <item row="1" column="0">
-         <widget class="QPushButton" name="id_ascendente_pushButton">
-          <property name="text">
-           <string>id (ascendente)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="distancia_descendente_pushButton">
-          <property name="text">
-           <string>Distancia (descendente)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="velocidad_ascendente_pushButton">
-          <property name="text">
-           <string>Velocidad (ascendente)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="3">
-         <widget class="QTableWidget" name="tabla2"/>
-        </item>
-       </layout>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -298,6 +271,9 @@
     </property>
     <addaction name="actionAbrir"/>
     <addaction name="actionGuardar"/>
+    <addaction name="actionID_ascendente"/>
+    <addaction name="actionDistancia_descendente"/>
+    <addaction name="actionVelocidad_ascendente"/>
    </widget>
    <addaction name="menuArchivo"/>
   </widget>
@@ -316,6 +292,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionID_ascendente">
+   <property name="text">
+    <string>ID ascendente</string>
+   </property>
+  </action>
+  <action name="actionDistancia_descendente">
+   <property name="text">
+    <string>Distancia descendente</string>
+   </property>
+  </action>
+  <action name="actionVelocidad_ascendente">
+   <property name="text">
+    <string>Velocidad ascendente</string>
    </property>
   </action>
  </widget>
