@@ -17,6 +17,9 @@ class Particula:
         self.__green = green
         self.__blue = blue
         self.__distancia = distancia_euclidiana(origen_x, origen_y, destino_x, destino_y)
+
+    def __lt__(self, other):
+        return self.__id < other._id
     
     def __str__(self):
         return(
