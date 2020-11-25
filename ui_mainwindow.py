@@ -22,6 +22,12 @@ class Ui_MainWindow(object):
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
         self.actionGuardar.setObjectName(u"actionGuardar")
+        self.actionID_ascendente = QAction(MainWindow)
+        self.actionID_ascendente.setObjectName(u"actionID_ascendente")
+        self.actionDistancia_descendente = QAction(MainWindow)
+        self.actionDistancia_descendente.setObjectName(u"actionDistancia_descendente")
+        self.actionVelocidad_ascendente = QAction(MainWindow)
+        self.actionVelocidad_ascendente.setObjectName(u"actionVelocidad_ascendente")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
@@ -72,6 +78,7 @@ class Ui_MainWindow(object):
 
         self.blue_spinBox = QSpinBox(self.groupBox)
         self.blue_spinBox.setObjectName(u"blue_spinBox")
+        self.blue_spinBox.setMaximum(1000)
 
         self.gridLayout.addWidget(self.blue_spinBox, 8, 1, 1, 1)
 
@@ -197,31 +204,6 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.limpiar, 1, 1, 1, 1)
 
         self.tabWidge.addTab(self.tab_3, "")
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName(u"tab_4")
-        self.gridLayout_5 = QGridLayout(self.tab_4)
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.id_ascendente_pushButton = QPushButton(self.tab_4)
-        self.id_ascendente_pushButton.setObjectName(u"id_ascendente_pushButton")
-
-        self.gridLayout_5.addWidget(self.id_ascendente_pushButton, 1, 0, 1, 1)
-
-        self.distancia_descendente_pushButton = QPushButton(self.tab_4)
-        self.distancia_descendente_pushButton.setObjectName(u"distancia_descendente_pushButton")
-
-        self.gridLayout_5.addWidget(self.distancia_descendente_pushButton, 1, 1, 1, 1)
-
-        self.velocidad_ascendente_pushButton = QPushButton(self.tab_4)
-        self.velocidad_ascendente_pushButton.setObjectName(u"velocidad_ascendente_pushButton")
-
-        self.gridLayout_5.addWidget(self.velocidad_ascendente_pushButton, 1, 2, 1, 1)
-
-        self.tabla2 = QTableWidget(self.tab_4)
-        self.tabla2.setObjectName(u"tabla2")
-
-        self.gridLayout_5.addWidget(self.tabla2, 0, 0, 1, 3)
-
-        self.tabWidge.addTab(self.tab_4, "")
 
         self.gridLayout_3.addWidget(self.tabWidge, 0, 0, 1, 1)
 
@@ -239,10 +221,13 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuArchivo.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
+        self.menuArchivo.addAction(self.actionID_ascendente)
+        self.menuArchivo.addAction(self.actionDistancia_descendente)
+        self.menuArchivo.addAction(self.actionVelocidad_ascendente)
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidge.setCurrentIndex(3)
+        self.tabWidge.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -258,6 +243,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGuardar.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+S", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionID_ascendente.setText(QCoreApplication.translate("MainWindow", u"ID ascendente", None))
+        self.actionDistancia_descendente.setText(QCoreApplication.translate("MainWindow", u"Distancia descendente", None))
+        self.actionVelocidad_ascendente.setText(QCoreApplication.translate("MainWindow", u"Velocidad ascendente", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Particula.", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"destino y:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"origen x:", None))
@@ -279,10 +267,6 @@ class Ui_MainWindow(object):
         self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Pizarra", None))
-        self.id_ascendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"id (ascendente)", None))
-        self.distancia_descendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"Distancia (descendente)", None))
-        self.velocidad_ascendente_pushButton.setText(QCoreApplication.translate("MainWindow", u"Velocidad (ascendente)", None))
-        self.tabWidge.setTabText(self.tabWidge.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Orden", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
 
