@@ -16,9 +16,9 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="tabWidge">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -48,10 +48,18 @@
         </property>
         <layout class="QGridLayout" name="gridLayout">
          <item row="1" column="1">
-          <widget class="QSpinBox" name="origen_x_spinBox"/>
+          <widget class="QSpinBox" name="origen_x_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QSpinBox" name="id_spinBox"/>
+          <widget class="QSpinBox" name="id_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="4" column="0">
           <widget class="QLabel" name="label_5">
@@ -106,7 +114,11 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QSpinBox" name="origen_y_spinBox"/>
+          <widget class="QSpinBox" name="origen_y_spinBox">
+           <property name="maximum">
+            <number>999</number>
+           </property>
+          </widget>
          </item>
          <item row="12" column="0" colspan="2">
           <widget class="QPushButton" name="mostrar_pushButton">
@@ -116,10 +128,18 @@
           </widget>
          </item>
          <item row="5" column="1">
-          <widget class="QSpinBox" name="velocidad_spinBox"/>
+          <widget class="QSpinBox" name="velocidad_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="4" column="1">
-          <widget class="QSpinBox" name="destino_y_spinBox"/>
+          <widget class="QSpinBox" name="destino_y_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="7" column="0">
           <widget class="QLabel" name="label_8">
@@ -136,13 +156,25 @@
           </widget>
          </item>
          <item row="7" column="1">
-          <widget class="QSpinBox" name="green_spinBox"/>
+          <widget class="QSpinBox" name="green_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QSpinBox" name="destino_x_spinBox"/>
+          <widget class="QSpinBox" name="destino_x_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="6" column="1">
-          <widget class="QSpinBox" name="red_spinBox"/>
+          <widget class="QSpinBox" name="red_spinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
          </item>
          <item row="6" column="0">
           <widget class="QLabel" name="label_7">
@@ -194,7 +226,7 @@
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Página</string>
+        <string>Pizarra</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0" colspan="2">
@@ -213,6 +245,37 @@
            <string>Limpiar</string>
           </property>
          </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Orden</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="id_ascendente_pushButton">
+          <property name="text">
+           <string>id (ascendente)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="distancia_descendente_pushButton">
+          <property name="text">
+           <string>Distancia (descendente)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="velocidad_ascendente_pushButton">
+          <property name="text">
+           <string>Velocidad (ascendente)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QTableWidget" name="tabla2"/>
         </item>
        </layout>
       </widget>
