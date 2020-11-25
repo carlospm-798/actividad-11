@@ -8,7 +8,7 @@ from PySide2.QtCore import Slot
 from PySide2.QtGui import QPen, QColor, QTransform
 from random import randint
 from ui_mainwindow import Ui_MainWindow
-from libreria import Libreria
+from libreria import Libreria #particulas - Particulas
 from particula import Particula
 
 class MainWindow(QMainWindow):
@@ -35,27 +35,150 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
-        self.ui.id_ascendente_pushButton.clicked.connect(self.id_ascendente)
-        self.ui.distancia_descendente_pushButton.clicked.connect(self.distancia_descendente)
-        self.ui.velocidad_ascendente_pushButton.clicked.connect(self.velocidad_ascendente)
-    
-    @Slot()
-    def id_ascendente(self):
-        print('id ascendente')
-        
-    @Slot()
-    def distancia_descendente(self):
-        print('distancia descendente')
-    
-    @Slot()
-    def velocidad_ascendente(self):
-        print('velocidad ascendente')
+        self.ui.actionID_ascendente.triggered.connect(self.id_ascendente)
+        self.ui.actionDistancia_descendente.triggered.connect(self.distancia_descendente)
+        self.ui.actionVelocidad_ascendente.triggered.connect(self.velocidad_ascendente)
 
     def wheelEvent(self, event):
         if event.delta() > 0:
             self.ui.graphicsView.scale(1.2, 1.2)
         else:
             self.ui.graphicsView.scale(0.8, 0.8)
+
+    @Slot()
+    def id_ascendente(self):
+        #print('id ascendente')
+        self.ui.tabla.clear()
+        self.ui.salida.clear()
+        headers = ['ID', 'origen x', 'origen y', 'destino x', 'destino y', 'velocidad', 'red', 'green', 'blue', 'distancia']
+        self.ui.tabla.setHorizontalHeaderLabels(headers)
+        self.ui.tabla.setRowCount(len(self.libreria))
+
+        particulas = []
+
+        for particula in self.libreria:
+            particulas.append(particula)
+        particulas.sort(key = lambda particula: particula.id, reverse = False)
+
+        row = 0
+        for particula in particulas:
+
+            id_widget = QTableWidgetItem(str(particula.id))
+            origen_x_widget = QTableWidgetItem(str(particula.origen_x))
+            origen_y_widget = QTableWidgetItem(str(particula.origen_y))
+            destino_x_widget = QTableWidgetItem(str(particula.destino_x))
+            destino_y_widget = QTableWidgetItem(str(particula.destino_y))
+            velocidad_widget = QTableWidgetItem(str(particula.velocidad))
+            red_widget = QTableWidgetItem(str(particula.red))
+            green_widget = QTableWidgetItem(str(particula.green))
+            blue_widget = QTableWidgetItem(str(particula.blue))
+            distancia_widget = QTableWidgetItem(str(particula.distancia))
+
+            self.ui.tabla.setItem(row, 0, id_widget)
+            self.ui.tabla.setItem(row, 1, origen_x_widget)
+            self.ui.tabla.setItem(row, 2, origen_y_widget)
+            self.ui.tabla.setItem(row, 3, destino_x_widget)
+            self.ui.tabla.setItem(row, 4, destino_y_widget)
+            self.ui.tabla.setItem(row, 5, velocidad_widget)
+            self.ui.tabla.setItem(row, 6, red_widget)
+            self.ui.tabla.setItem(row, 7, green_widget)
+            self.ui.tabla.setItem(row, 8, blue_widget)
+            self.ui.tabla.setItem(row, 9, distancia_widget)
+
+            row += 1
+
+        for particula in particulas:
+            self.ui.salida.insertPlainText(str(particula) + '\n')
+
+    @Slot()
+    def distancia_descendente(self):
+        #print('distancia descendente')
+        self.ui.tabla.clear()
+        self.ui.salida.clear()
+        headers = ['ID', 'origen x', 'origen y', 'destino x', 'destino y', 'velocidad', 'red', 'green', 'blue', 'distancia']
+        self.ui.tabla.setHorizontalHeaderLabels(headers)
+        self.ui.tabla.setRowCount(len(self.libreria))
+
+        particulas = []
+
+        for particula in self.libreria:
+            particulas.append(particula)
+        particulas.sort(key = lambda particula: particula.distancia, reverse = False)
+
+        row = 0
+        for particula in particulas:
+
+            id_widget = QTableWidgetItem(str(particula.id))
+            origen_x_widget = QTableWidgetItem(str(particula.origen_x))
+            origen_y_widget = QTableWidgetItem(str(particula.origen_y))
+            destino_x_widget = QTableWidgetItem(str(particula.destino_x))
+            destino_y_widget = QTableWidgetItem(str(particula.destino_y))
+            velocidad_widget = QTableWidgetItem(str(particula.velocidad))
+            red_widget = QTableWidgetItem(str(particula.red))
+            green_widget = QTableWidgetItem(str(particula.green))
+            blue_widget = QTableWidgetItem(str(particula.blue))
+            distancia_widget = QTableWidgetItem(str(particula.distancia))
+
+            self.ui.tabla.setItem(row, 0, id_widget)
+            self.ui.tabla.setItem(row, 1, origen_x_widget)
+            self.ui.tabla.setItem(row, 2, origen_y_widget)
+            self.ui.tabla.setItem(row, 3, destino_x_widget)
+            self.ui.tabla.setItem(row, 4, destino_y_widget)
+            self.ui.tabla.setItem(row, 5, velocidad_widget)
+            self.ui.tabla.setItem(row, 6, red_widget)
+            self.ui.tabla.setItem(row, 7, green_widget)
+            self.ui.tabla.setItem(row, 8, blue_widget)
+            self.ui.tabla.setItem(row, 9, distancia_widget)
+
+            row += 1
+
+        for particula in particulas:
+            self.ui.salida.insertPlainText(str(particula) + \n)
+    
+    @Slot()
+    def velocidad_ascendente(self):
+        self.ui.tabla.clear()
+        self.ui.salida.clear()
+        headers = ['ID', 'origen x', 'origen y', 'destino x', 'destino y', 'velocidad', 'red', 'green', 'blue', 'distancia']
+        self.ui.tabla.setHorizontalHeaderLabels(headers)
+        self.ui.tabla.setRowCount(len(self.libreria))
+
+        particulas = []
+
+        for particula in self.libreria:
+            particulas.append(particula)
+        particulas.sort(key = lambda particula: particula.velocidad, reverse = False)
+
+        row = 0
+        for particula in particulas:
+
+            id_widget = QTableWidgetItem(str(particula.id))
+            origen_x_widget = QTableWidgetItem(str(particula.origen_x))
+            origen_y_widget = QTableWidgetItem(str(particula.origen_y))
+            destino_x_widget = QTableWidgetItem(str(particula.destino_x))
+            destino_y_widget = QTableWidgetItem(str(particula.destino_y))
+            velocidad_widget = QTableWidgetItem(str(particula.velocidad))
+            red_widget = QTableWidgetItem(str(particula.red))
+            green_widget = QTableWidgetItem(str(particula.green))
+            blue_widget = QTableWidgetItem(str(particula.blue))
+            distancia_widget = QTableWidgetItem(str(particula.distancia))
+
+            self.ui.tabla.setItem(row, 0, id_widget)
+            self.ui.tabla.setItem(row, 1, origen_x_widget)
+            self.ui.tabla.setItem(row, 2, origen_y_widget)
+            self.ui.tabla.setItem(row, 3, destino_x_widget)
+            self.ui.tabla.setItem(row, 4, destino_y_widget)
+            self.ui.tabla.setItem(row, 5, velocidad_widget)
+            self.ui.tabla.setItem(row, 6, red_widget)
+            self.ui.tabla.setItem(row, 7, green_widget)
+            self.ui.tabla.setItem(row, 8, blue_widget)
+            self.ui.tabla.setItem(row, 9, distancia_widget)
+
+            row += 1
+
+        for particula in particulas:
+            self.ui.salida.insertPlainText(str(particula) + \n)
+
 
     @Slot()
     def dibujar(self):
