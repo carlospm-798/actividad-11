@@ -133,7 +133,7 @@ class MainWindow(QMainWindow):
             row += 1
 
         for particula in particulas:
-            self.ui.salida.insertPlainText(str(particula) + \n)
+            self.ui.salida.insertPlainText(str(particula) + '\n')
     
     @Slot()
     def velocidad_ascendente(self):
@@ -177,7 +177,7 @@ class MainWindow(QMainWindow):
             row += 1
 
         for particula in particulas:
-            self.ui.salida.insertPlainText(str(particula) + \n)
+            self.ui.salida.insertPlainText(str(particula) + '\n')
 
 
     @Slot()
