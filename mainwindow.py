@@ -35,6 +35,22 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
+        self.ui.id_ascendente_pushButton.clicked.connect(self.id_ascendente)
+        self.ui.distancia_descendente_pushButton.clicked.connect(self.distancia_descendente)
+        self.ui.velocidad_ascendente_pushButton.clicked.connect(self.velocidad_ascendente)
+    
+    @Slot()
+    def id_ascendente(self):
+        print('id ascendente')
+        
+    @Slot()
+    def distancia_descendente(self):
+        print('distancia descendente')
+    
+    @Slot()
+    def velocidad_ascendente(self):
+        print('velocidad ascendente')
+
     def wheelEvent(self, event):
         if event.delta() > 0:
             self.ui.graphicsView.scale(1.2, 1.2)
