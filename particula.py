@@ -32,6 +32,7 @@ class Particula:
             'Distancia: ' + str(self.__distancia) + '\n'
         )
     
+    
     @property
     def id(self):
         return self.__id
